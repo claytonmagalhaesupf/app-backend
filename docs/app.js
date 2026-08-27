@@ -362,7 +362,7 @@ function validateGame() {
     return expected.order === index + 1;
   });
 
-  const metadataCorrect = flowCards.every(card => {
+  /* const metadataCorrect = flowCards.every(card => {
     const expected = CARDS.find(item => item.id === card.dataset.id);
     const fileValue = card.querySelector(".file-answer").value;
     const lineValue = card.querySelector(".line-answer").value;
@@ -375,7 +375,8 @@ function validateGame() {
     );
 
     return fileCorrect && rangeCorrect;
-  });
+    
+  }); */
 
   showResult(orderedCorrectly && metadataCorrect);
 }
