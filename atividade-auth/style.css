@@ -1,0 +1,417 @@
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-soft: #f8fafc;
+  --text: #172033;
+  --muted: #697386;
+  --border: #d8dfeb;
+  --primary: #3157d5;
+  --primary-dark: #2443a8;
+  --success: #18794e;
+  --success-bg: #eaf7f0;
+  --danger: #b42318;
+  --danger-bg: #fff0ee;
+  --shadow: 0 18px 50px rgba(30, 41, 59, 0.08);
+  --radius: 18px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.flow-zone {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background:
+    radial-gradient(circle at top left, rgba(49, 87, 213, 0.08), transparent 34%),
+    var(--bg);
+  color: var(--text);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.app-shell {
+  width: min(1320px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 32px 0 48px;
+}
+
+.screen {
+  width: 100%;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.screen-start {
+  min-height: calc(100vh - 80px);
+  display: grid;
+  place-items: center;
+}
+
+.hero-card {
+  width: min(720px, 100%);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: var(--shadow);
+}
+
+.eyebrow,
+.panel-kicker {
+  display: inline-block;
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  margin-bottom: 12px;
+  letter-spacing: -0.04em;
+}
+
+h2 {
+  margin: 4px 0 0;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+h3 {
+  margin-bottom: 8px;
+}
+
+.lead {
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field span,
+.meta-field label {
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+input {
+  width: 100%;
+  min-height: 46px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0 12px;
+  background: var(--surface);
+  color: var(--text);
+  outline: none;
+}
+
+input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(49, 87, 213, 0.12);
+}
+
+.form-error {
+  min-height: 24px;
+  color: var(--danger);
+  margin: 14px 0 4px;
+  font-size: 0.92rem;
+}
+
+.button {
+  min-height: 44px;
+  border: 0;
+  border-radius: 10px;
+  padding: 0 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: var(--primary);
+  color: white;
+}
+
+.button-primary:hover {
+  background: var(--primary-dark);
+}
+
+.button-secondary {
+  background: #eef2f8;
+  color: var(--text);
+}
+
+.hero-card .button {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.attempt-badge,
+.count-pill {
+  background: #edf2ff;
+  color: var(--primary-dark);
+  border: 1px solid #d4ddff;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.84rem;
+}
+
+.instructions {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(30, 41, 59, 0.04);
+}
+
+.instructions p {
+  margin-bottom: 8px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.instructions .hint {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+code {
+  background: #edf2f7;
+  border-radius: 6px;
+  padding: 2px 6px;
+  color: #334155;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 12px 36px rgba(30, 41, 59, 0.05);
+}
+
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.drop-zone {
+  min-height: 420px;
+  border-radius: 14px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.card-bank {
+  display: grid;
+  gap: 12px;
+}
+
+.flow-zone {
+  display: grid;
+  gap: 12px;
+  align-content: start;
+  border: 1px dashed var(--border);
+  padding: 12px;
+  background: var(--surface-soft);
+}
+
+.drop-zone.drag-over {
+  background: #eef3ff;
+  border-color: #9db0f5;
+}
+
+.auth-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.04);
+}
+
+.auth-card.dragging {
+  opacity: 0.45;
+}
+
+.card-main {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 14px;
+  cursor: grab;
+}
+
+.drag-handle {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  background: #eef2f8;
+  color: #64748b;
+  font-weight: 900;
+  user-select: none;
+}
+
+.card-order {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: #edf2ff;
+  color: var(--primary);
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.card-text {
+  font-weight: 780;
+  line-height: 1.35;
+}
+
+.card-meta {
+  display: none;
+  grid-template-columns: minmax(0, 1fr) 170px;
+  gap: 12px;
+  padding: 14px;
+  border-top: 1px solid var(--border);
+  background: #fbfcfe;
+}
+
+.flow-zone .card-meta {
+  display: grid;
+}
+
+.meta-field {
+  display: grid;
+  gap: 7px;
+}
+
+.empty-state {
+  min-height: 150px;
+  border: 1px dashed #c9d2df;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  text-align: center;
+  padding: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.result {
+  margin-top: 16px;
+  padding: 18px;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.result.correct {
+  color: var(--success);
+  background: var(--success-bg);
+  border: 1px solid #b7e3cb;
+}
+
+.result.wrong {
+  color: var(--danger);
+  background: var(--danger-bg);
+  border: 1px solid #f1c0ba;
+}
+
+@media (max-width: 900px) {
+  .game-grid,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 560px) {
+  .app-shell {
+    width: min(100% - 20px, 1320px);
+    padding-top: 10px;
+  }
+
+  .hero-card,
+  .panel {
+    padding: 16px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .actions .button {
+    width: 100%;
+  }
+}

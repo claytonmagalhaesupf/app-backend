@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desafio Auth — Fluxo de Autenticação</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section id="start-screen" class="screen screen-start">
+      <div class="hero-card">
+        <div class="eyebrow">Programação Web e Mobile</div>
+        <h1>Desafio Auth</h1>
+        <p class="lead">
+          Organize o fluxo de autenticação da API e identifique onde cada etapa aparece no código.
+        </p>
+
+        <div class="form-grid">
+          <label class="field">
+            <span>Nome do aluno</span>
+            <input id="student-name" type="text" autocomplete="name" placeholder="Ex.: João da Silva" />
+          </label>
+
+          <label class="field">
+            <span>Matrícula</span>
+            <input id="student-id" type="text" inputmode="numeric" placeholder="Ex.: 123456" />
+          </label>
+        </div>
+
+        <p id="start-error" class="form-error" aria-live="polite"></p>
+
+        <button id="start-button" class="button button-primary">
+          Iniciar atividade
+        </button>
+      </div>
+    </section>
+
+    <section id="game-screen" class="screen hidden">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">Desafio Auth</div>
+          <h2 id="student-greeting">Olá!</h2>
+        </div>
+
+        <div class="attempt-badge">
+          Tentativas: <strong id="attempt-count">0</strong>
+        </div>
+      </header>
+
+      <section class="instructions">
+        <h3>Ordene o fluxo completo de autenticação</h3>
+        <p>
+          Arraste todos os cartões para a área <strong>Seu fluxo</strong> na ordem correta.
+          Depois de posicionar um cartão, informe o <strong>arquivo</strong> e o
+          <strong>intervalo de linhas</strong> onde essa etapa aparece.
+        </p>
+        <p class="hint">
+          Exemplo de linha: <code>42-49</code>. A validação aceita qualquer intervalo que
+          toque no trecho configurado como correto.
+        </p>
+      </section>
+
+      <div class="game-grid">
+        <section class="panel">
+          <div class="panel-heading">
+            <div>
+              <span class="panel-kicker">Cartões disponíveis</span>
+              <h3>Banco de etapas</h3>
+            </div>
+            <span id="bank-count" class="count-pill"></span>
+          </div>
+
+          <div id="card-bank" class="drop-zone card-bank" data-zone="bank" aria-label="Cartões disponíveis"></div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-heading">
+            <div>
+              <span class="panel-kicker">Resposta do aluno</span>
+              <h3>Seu fluxo</h3>
+            </div>
+            <span id="flow-count" class="count-pill"></span>
+          </div>
+
+          <div id="flow-zone" class="drop-zone flow-zone" data-zone="flow" aria-label="Fluxo ordenado">
+            <div id="empty-flow" class="empty-state">
+              Arraste o primeiro cartão para cá.
+            </div>
+          </div>
+
+          <div class="actions">
+            <button id="reset-button" class="button button-secondary">Recomeçar</button>
+            <button id="validate-button" class="button button-primary">Validar</button>
+          </div>
+
+          <div id="result" class="result hidden" role="status" aria-live="polite"></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
